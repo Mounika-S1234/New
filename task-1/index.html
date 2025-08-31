@@ -4,20 +4,10 @@
    <meta charset="UTF-8">
    <title>Nested Checkbox</title>
    <style>
-       body {
-           font-family: Arial, sans-serif;
-           padding: 20px;
-       }
-       .category {
-           margin-top: 10px;
-       }
-       .items {
-           margin-left: 20px;
-       }
-       label {
-           display: block;
-           cursor: pointer;
-       }
+       body { font-family: Arial, sans-serif; padding: 20px; }
+       .category { margin-top: 10px; }
+       .items { margin-left: 20px; }
+       label { display: block; cursor: pointer; }
    </style>
 </head>
 <body>
@@ -89,7 +79,7 @@
 
        // --- Update category state ---
        function updateCategory(category, items) {
-           const categoryBox = document.querySelector(.category-checkbox[data-category="${category}"]);
+           const categoryBox = document.querySelector(`.category-checkbox[data-category="${category}"]`);
            const allChecked = [...items].every(i => i.checked);
            const noneChecked = [...items].every(i => !i.checked);
 
