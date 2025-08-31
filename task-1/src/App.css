@@ -1,0 +1,150 @@
+/* Reset some defaults (optional) */
+* { box-sizing: border-box; }
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: #fff; /* image header uses off-white/white */
+  color: #333;
+  position: relative;
+  z-index: 10;
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+
+/* Brand */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 700;
+  color: #222;
+}
+.brand .fern { color: #222; }
+.brand-text {
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  border-color: black;
+  border:10px;
+  height:100px;
+  width:200px;
+  
+}
+
+/* Links container */
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+/* Desktop link styles */
+.nav-links a {
+  color: #222;
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding: 0.25rem 0;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* CTA button in the nav */
+.cta {
+  color:white;
+  padding: 0.45rem 0.8rem;
+  border-radius: 22px;
+  font-size: 0.8rem;
+  text-decoration: none;
+  margin-left: 8px;
+  white-space: nowrap;
+}
+
+/* Icons on the right (desktop) */
+.icons {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+.icon-btn {
+  background: transparent;
+  border: none;
+  padding: 0.35rem;
+  cursor: pointer;
+  color: #222;
+  position: relative;
+}
+.icon-btn:focus { outline: 2px solid rgba(0,0,0,0.12); border-radius: 4px; }
+
+/* cart badge */
+.cart { position: relative; }
+.badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: #ff6b00;
+  color: white;
+  font-size: 0.65rem;
+  padding: 0.12rem 0.35rem;
+  border-radius: 10px;
+}
+
+/* Hamburger - hidden on desktop */
+.hamburger {
+  display: none;
+  background: transparent;
+  border: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 0.25rem;
+}
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #222;
+  display: block;
+  border-radius: 2px;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 64px;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    width: 240px;
+    display: none;
+    padding: 1rem;
+    gap: 1rem;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    border-radius: 6px;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  /* hide desktop icons, show mobile icons inside the opened menu */
+  .icons { display: none; }
+  .mobile-icons { display: flex; gap: 0.5rem; margin-top: 0.5rem; }
+
+  /* adjust CTA to full width look on mobile */
+  .cta {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    padding: 0.6rem;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  /* align brand / left spacing a bit */
+  .brand-text { font-size: 0.95rem; }
+}

@@ -1,0 +1,66 @@
+.hero {
+  display: flex;
+  flex-direction: row; /* Horizontal layout for desktop */
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  color: black;
+  background-color: white;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.image {
+background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnqbHi1E7v2CRfVdj8iSvNhFCP28e0C1jxgfT50atFY6f-o3gr0CKB9Iuoqyt-bcY8MdQ&usqp=CAU");
+  height: 50vh;
+  width: 30vw;
+background-size: cover; /* Use object-fit for img instead of background-image */
+  border-radius: 10px;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 40%;
+}
+
+.right h1 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.right p {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.right button {
+  color: black;
+  background-color: rgba(207, 195, 195, 0.603);
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  border: none;
+}
+
+/* Responsive for tablets and mobiles */
+@media (max-width: 1024px) {
+  .hero {
+    flex-direction: column; /* Stack vertically */
+    height: auto;
+  }
+  .image {
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnqbHi1E7v2CRfVdj8iSvNhFCP28e0C1jxgfT50atFY6f-o3gr0CKB9Iuoqyt-bcY8MdQ&usqp=CAU");
+  height: 50vh;
+  width: 30vw;
+background-size: cover;
+    width: 70%; /* Make image bigger on smaller screens */
+    height: 100%;
+  }
+  .right {
+    max-width: 90%;
+    text-align: center;
+  }
+}
